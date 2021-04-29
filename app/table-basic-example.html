@@ -1,0 +1,13 @@
+<form [formGroup]="patientCategory">
+<mat-form-field class="full-width">
+	<mat-select placeholder="Category" formControlName="patientCategory">
+		<mat-option>--</mat-option>
+		<mat-option *ngFor="let category of patientCategories" [value]="category">
+			{{category.name}} - {{category.description}}
+		</mat-option>
+	</mat-select>
+</mat-form-field>
+
+<p>{{patientCategory.get('patientCategory').value | json}}</p>
+</form>
+
